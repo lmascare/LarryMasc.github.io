@@ -39,39 +39,32 @@
         }
         header:before,
         nav:before,
-        article:before,
-        aside:before,
-        section:before,
         footer:before {
             content: '<';
         }
         header:after,
         nav:after,
-        article:after,
-        aside:after,
-        section:after,
         footer:after {
             content: '>';
           }
-        article {
-        float: left;
-            margin-right: 20px;
-            width: 60%;
-        }
-        aside {
-            float: left;
-            width: calc(40% - 140px);
-        }
+        header,
+        nav,
+        section,
         footer {
-            clear: both;
+          border: 1px solid gray;
+          padding: 20px;
+          margin-bottom: 25px;
         }
-        /* CSS */
-        section {
-            overflow: hidden;
+
+        .products {
+          display: grid;
+          grid-template-columns: auto auto auto auto;
         }
-        div {
-            float: left;
-            width: 25%;
+
+        .products div {
+          border: 2px solid white;
+          padding: 30px;
+          margin: 10px;
         }
     </style>
 </head>
@@ -80,7 +73,8 @@
     <header>Header</header>
     <nav>Navigation</nav>
     <!-- <article>Article</article> -->
-    <section>
+    <section>Image Carousel</section>
+    <section class="products">
         <div>Product 1</div>
         <div>Product 2</div>
         <div>Product 3</div>

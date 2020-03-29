@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>Guidelines when Scripting Python</title>
+<title>Noah Guidelines when Scripting Python</title>
 </head>
 <body>
 	<h1><a id="guidelines">Guidelines while scripting Python</a></h1>
@@ -134,6 +134,9 @@ files in Python syntax
 </tr>
 </table>
 
+<br>
+<a href="#guidelines" >Top</a>
+
 <h2><a id="config_directive">Configuration Directives</a></h2>
 <p>
 This section describes structure of Python scripts as well as the two
@@ -155,7 +158,6 @@ A script that uses configuration directives must be setup as follows
 	<dd>All variables must be defined in the <scriptname>_cfg.py file</dd>
 	<dd>All DB schema definitions must be in the <scriptname>_schema.py file</dd>
 </dl>
-
 </ol>
 
 <ol>
@@ -163,24 +165,73 @@ A special Python syntax based file <strong>adm_cfg.py</strong> contains
 configuration information used across all scripts. It hosts all directives
 in the <a href="#dir_attrs">table</a> as well as encrypted credentials.
 </ol>
-
 <ol>
 A commonly used functions file <strong>utils.py</strong> provides the functions
 like logging, database connectivity, ingestion CSV files into a DB etc.
-<dl>
-	<dt>Functions to be used in <strong>ALL</strong> scripts from utils.py</dt>
-	<dd>init. Provides desired initialization functionality.</dd>
-	<dd>logit. Provides all aspects of logging.</dd>
-</dl>
 </ol>
-
 </p>
+<a href="#guidelines" >Top</a>
 
 <h2><a id="common_python_functions">Widely Used Python Functions</a></h2>
 
-<h2><a id="logging">Logging</a></h2>
+<dl>
+	<dt>Functions to be used in <strong>ALL</strong> scripts from utils.py</dt>
+	<dd>init()      - Provides desired initialization functionality.</dd>
+	<dd>logit()     - Provides all aspects of logging.</dd>
+	<dd>dbconnect() - Connect to the Database of choice. It returns the cursor
+	and connection objects</dd>
+</dl>
 
+
+<a href="#guidelines" >Top</a>
+
+<h2><a id="logging">Logging</a></h2>
+The ability to troubleshoot scripts based on events that occurred in a
+scripts is vital. The world is also moving to the cloud where there will be
+no-system-access to run the script manually for troubleshooting. Debugging
+from logs should be enough to troubleshoot the issue and apply the fix. There
+are <strong>five (5)</strong> logging levels and how the level should be used.
+
+<table>
+<th>Logging levels and uses.</th>
+
+<tr>
+<td><strong>Logging Level</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+
+<tr>
+<td>DEBUG</td>
+<td>Use when debug is enabled.</td>
+</tr>
+
+<tr>
+<td>INFO</td>
+<td>Informational status of the state of the statement.</td>
+</tr>
+
+<tr>
+<td>WARNING</td>
+<td>Unexpected return code. Script can however continue.</td>
+</tr>
+
+<tr>
+<td>ERROR</td>
+<td>With an ERROR code, script cannot continue and should exit gracefully.</td>
+</tr>
+
+<tr>
+<td>CRITICAL</td>
+<td>A CRITICAL return code is a Mandatory and Immediate exit.</td>
+</tr>
+
+</table>
+
+
+<a href="#guidelines" >Top</a>
 <h2><a id="FAQ">Frequently Asked Questions</a></h2>
+
+<a href="#guidelines" >Top</a>
 
 </body>
 

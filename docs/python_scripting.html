@@ -52,17 +52,131 @@ A fix in the common code will benefit many scripts that use it.
 
 <ul>
 A bug in a common code can break several scripts. The industry has solved
-this by using <em><strong>unittests</strong></em>
+this by using <em><strong>unittests</strong></em>.
 </ul>
 
 <a href="#guidelines" >Top</a>
 </p>
 
 <h2><a id="dir_structure">Directory Structure</a></h2>
+Directory structure implemented in Production
+<pre>
+	/u/admin/
+		├── bin
+		|    ├── adminpy
+		├── cfg
+		├── etc
+		├── keys
+		├── logs
+		└── tmp
+</pre>
+<table id="dir_attrs">
+
+<th>
+Attributes of each directory
+</th>
+
+<tr>
+<td><strong>Directory</strong></td>
+<td><strong>Defined variable</strong></td>
+<td><strong>Notes</strong></td>
+</tr>
+<tr>
+<td>/bb/admin</td>
+<td>adm_home</td>
+<td>Base Directory</td>
+</tr>
+<tr>
+<td>/bb/admin/bin</td>
+<td>adm_bin</td>
+<td>All Python Scripts promoted to Production</td>
+</tr>
+<tr>
+<td>/bb/admin/bin/adminpy</td>
+<td>adm_py</td>
+<td>Python Modules supporting adm_bin scripts. This includes configuration
+files in Python syntax
+</td>
+</tr>
+<tr>
+<td>/bb/admin/cfg</td>
+<td>adm_cfg</td>
+<td>Configuration files (Not Python format)</td>
+</tr>
+<tr>
+<td>/bb/admin/etc</td>
+<td>adm_etc</td>
+<td>Miscellaneous file</td>
+</tr>
+<tr>
+<td>/bb/admin/keys</td>
+<td>adm_keys</td>
+<td>Location of keys (public)</td>
+</tr>
+<tr>
+<td>/bb/admin/logs</td>
+<td>adm_logs</td>
+<td>Location of logs.</td>
+</tr>
+<tr>
+<td>/bb/admin/tmp</td>
+<td>adm_tmp<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+</head>
+<body>
+
+</body>
+</html></td>
+<td>Location of temporary files. 7 days residency</td>
+</tr>
+</table>
 
 <h2><a id="config_directive">Configuration Directives</a></h2>
+<p>
+This section describes structure of Python scripts as well as the two
+files of importance since they are user across all scripts.
 
-<h2><a id="common_python_functions">Widely Used Python Function</a></h2>
+<ol>
+A script that uses configuration directives must be setup as follows
+<pre>
+	/u/admin/
+		├── bin
+		|    ├── abc.py  (Python script)
+		|    ├── adminpy (directory)
+		|          ├── abc_cfg.py (Config file)
+		|          ├── abc_schema.py (DB Schema definition file)
+</pre>
+
+<dl>
+	<dt>Configuration variables</dt>
+	<dd>All variables must be defined in the <scriptname>_cfg.py file</dd>
+	<dd>All DB schema definitions must be in the <scriptname>_schema.py file</dd>
+</dl>
+
+</ol>
+
+<ol>
+A special Python syntax based file <strong>adm_cfg.py</strong> contains
+configuration information used across all scripts. It hosts all directives
+in the <a href="#dir_attrs">table</a> as well as encrypted credentials.
+</ol>
+
+<ol>
+A commonly used functions file <strong>utils.py</strong> provides the functions
+like logging, database connectivity, ingestion CSV files into a DB etc.
+<dl>
+	<dt>Functions to be used in <strong>ALL</strong> scripts from utils.py</dt>
+	<dd>init. Provides desired initialization functionality.</dd>
+	<dd>logit. Provides all aspects of logging.</dd>
+</dl>
+</ol>
+
+</p>
+
+<h2><a id="common_python_functions">Widely Used Python Functions</a></h2>
 
 <h2><a id="logging">Logging</a></h2>
 

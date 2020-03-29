@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>Noah Guidelines when Scripting Python</title>
+<title>Guidelines when Scripting Python</title>
 </head>
 <body>
 	<h1><a id="guidelines">Guidelines while scripting Python</a></h1>
@@ -11,6 +11,7 @@
 	<ul><a href="#config_directive" >Configuration Directives</a></ul>
 	<ul><a href="#common_python_functions">Widely used Python functions</a></ul>
 	<ul><a href="#logging">Logging</a></ul>
+	<ul><a href="#code_compliance">Code Compliance</a></ul>
 	<ul><a href="#FAQ" >Frequently Asked Questions</a></ul>
 	
 	<ul><dl>
@@ -26,6 +27,9 @@
 	<a id href="#connect_db">How do I establish a connection to the Database?</a>
 	</dd>
 	
+	<dd>
+	<a id href="#db_types">What are the supported database types?</a>
+	</dd>
 	</dl>	</ul>
 
 <h2><a id="intro">Introduction</a></h2>
@@ -243,6 +247,26 @@ are <strong>five (5)</strong> logging levels and how the level should be used.
 </table>
 <br>
 <a href="#guidelines" >Top</a>
+
+<h2><a id="code_compliance">Code Compliance</a></h2>
+To ensure that scripts can be read and understood, it is important to have
+documentation & comments as well as adhere to industry-standard style guides
+within the script.
+Additionally, code should run on all systems designed to support the
+application.
+<ul>
+Documentation is accomplished by using the 
+<a href="https://www.python.org/dev/peps/pep-0257/">PEP257</a> docstring
+standard.
+</ul>
+<ul>
+Style observance is accomplished by using the 
+<a href="https://www.python.org/dev/peps/pep-0008/">PEP8</a> style guide.
+</ul>
+<ul>
+Both standards are enforced during a Pull-Request.
+</ul>
+
 <h2><a id="FAQ">Frequently Asked Questions</a></h2>
 
 <li>
@@ -276,7 +300,7 @@ A. Here's the series of statements.
 </li>
 
 <li>
-<a id name="db_types">Q. What are the support database types?</a>
+<a id name="db_types">Q. What are the supported database types?</a>
 <br>
 A. The Database types (dbtype) are
 <table>
@@ -302,6 +326,12 @@ A. The Database types (dbtype) are
 <td>Microsoft SQL Server</td>
 <td>mssql</td>
 <td>Microsoft SQL Server</td>
+</tr>
+
+<tr>
+<td>RestAPI</td>
+<td>restapi</td>
+<td>Returns RestAPI endpoint data</td>
 </tr>
 
 </table>

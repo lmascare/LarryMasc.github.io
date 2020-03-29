@@ -22,6 +22,9 @@
 	<dd>
 	<a id href="#import_utils">How do I import utils into my script?</a>
 	</dd>
+	<dd>
+	<a id href="#connect_db">How do I establish a connection to the Database?</a>
+	</dd>
 	
 	</dl>	</ul>
 
@@ -257,10 +260,57 @@ A. from admpy import utils
 <br>
 
 <li>
-<a id name="import_utils">Q. How do I import utils into my script?</a>
+<a id name="connect_db">Q. How do I establish a connection to the Database?</a>
 <br>
-A. from admpy import utils
+A. Here's the series of statements.
+<dl>
+<dd>Define dbid and dbtype in <scriptname>_cfg.py</dd>
+<dd><ul>dbid = "preueba"</ul></dd>
+<dd><ul>dbtype = "mysql3"</ul></dd>
+<br>
+<dd>In the main script</dd>
+<dd><ul>from admpy import utils</ul></dd>
+<dd><ul>from adm_py.<scriptname>_cfg import dbid, dbtype</ul></dd>
+<dd><ul>(cursor, connection) = utils.dbconnect(dbid, dbtype)</ul></dd>
+</dl>
 </li>
+
+<li>
+<a id name="db_types">Q. What are the support database types?</a>
+<br>
+A. The Database types (dbtype) are
+<table>
+<tr>
+<td><strong>Database Type</strong></td>
+<td><strong>dbtype</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+
+<tr>
+<td>MySQL</td>
+<td>mysql (Python2) | mysql3 (Python3)</td>
+<td>MySQL Databases in TVM's CMDB</td>
+</tr>
+
+<tr>
+<td>PostreSQL</td>
+<td>postgres</td>
+<td>PostgreSQL Databases in TVM's CMDB</td>
+</tr>
+
+<tr>
+<td>Microsoft SQL Server</td>
+<td>mssql</td>
+<td>Microsoft SQL Server</td>
+</tr>
+
+</table>
+
+ 
+</li>
+<br>
+
+
 <br>
 
 <a href="#guidelines" >Top</a>

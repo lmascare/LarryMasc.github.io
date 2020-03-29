@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Guidelines when Scripting Python</title>
+</head>
+<body>
+	<h1><a id="guidelines">Guidelines while scripting Python</a></h1>
+	<ul><a href="#intro" >Introduction</a></ul>	
+	<ul><a href="#dir_structure" >Directory Structure</a></ul>
+	<ul><a href="#config_directive" >Configuration Directives</a></ul>
+	<ul><a href="#common_python_functions">Widely used Python functions</a></ul>
+	<ul><a href="#logging">Logging</a></ul>
+	<ul><a href="#FAQ" >Frequently Asked Questions</a></ul>
+
+<h2><a id="intro">Introduction</a></h2>
+
+<p>
+This document provides guidelines and best practices to be used when coding
+Python Scripts. These best practices provide a foundational layer upon which
+custom code can be written to perform the desired tasks. The common functions
+are abstracted into separate configuration and utilities modules to be used as
+appropriate.
+
+<h4><a id="benefits">Benefits:</a></h4>
+
+<ul>
+Common Functions are reused thereby reducing the size of the script as well
+as eliminating duplication of code. A change of functionality in a section
+would require extensive rework across multiple scripts.
+</ul>
+
+<ul>
+Easier debugging by the team. All scripts using common functions make debugging
+significantly easier since the focus is on the custom code.
+</ul>
+
+<ul>
+Easier maintenance. eg DB connections are defined in a single configuration
+file. This makes changing DB credentials, host-name, ports etc very easy.
+</ul>
+
+<ul>
+Tried and tested methodology. The entire industry uses this method.
+</ul>
+
+<ul>
+A fix in the common code will benefit many scripts that use it.
+</ul>
+
+<h4><a id="cons">Cons:</a></h4>
+
+<ul>
+A bug in a common code can break several scripts. The industry has solved
+this by using <em><strong>unittests</strong></em>
+</ul>
+
+<a href="#guidelines" >Top</a>
+</p>
+
+<h2><a id="dir_structure">Directory Structure</a></h2>
+
+<h2><a id="config_directive">Configuration Directives</a></h2>
+
+<h2><a id="common_python_functions">Widely Used Python Function</a></h2>
+
+<h2><a id="logging">Logging</a></h2>
+
+<h2><a id="FAQ">Frequently Asked Questions</a></h2>
+
+</body>
+
+
+</html>

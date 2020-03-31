@@ -3,7 +3,31 @@
 <head>
 <meta charset="utf-8" />
 <title>Guidelines when Scripting Python</title>
+<link href="../css/w3.css" type="text/css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 </head>
+<style>
+	table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+            padding: 5px;
+            color: blue;
+            }
+        td, caption {
+            text-align: center;
+        }
+        h1, h2, h3, h4{
+            color: darkblue;
+        }
+        p, b, ul, ol, dl, dd, dt, li {
+            color: blue;
+        }
+        input[type=button], input[type=submit], input[type=reset] {
+            color: darkblue;
+            border-radius: 12px;
+        }
+</style>
 <body>
 	<h1><a id="guidelines">Guidelines while scripting Python</a></h1>
 	<ul><a href="#intro" >Introduction</a></ul>	
@@ -41,6 +65,8 @@ custom code can be written to perform the desired tasks. The common functions
 are abstracted into separate configuration and utilities modules to be used as
 appropriate.
 
+</p>
+
 <h4><a id="benefits">Benefits:</a></h4>
 
 <ul>
@@ -75,11 +101,11 @@ this by using <em><strong>unittests</strong></em>.
 </ul>
 
 <a href="#guidelines" >Top</a>
-</p>
 
 <h2><a id="dir_structure">Directory Structure</a></h2>
 Directory structure implemented in Production
 <pre>
+<p>
 	/u/admin/
 		├── bin
 		|    ├── adminpy
@@ -88,12 +114,12 @@ Directory structure implemented in Production
 		├── keys
 		├── logs
 		└── tmp
+</p>
 </pre>
 <table id="dir_attrs">
 
-<th>
-Attributes of each directory
-</th>
+<caption>
+<h4>Attributes of each directory</h4>
 
 <tr>
 <td><strong>Directory</strong></td>
@@ -139,18 +165,10 @@ files in Python syntax
 </tr>
 <tr>
 <td>/bb/admin/tmp</td>
-<td>adm_tmp<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8" />
-<title></title>
-</head>
-<body>
-
-</body>
-</html></td>
+<td>adm_tmp</td>
 <td>Location of temporary files. 7 days residency</td>
 </tr>
+</caption>
 </table>
 
 <br>
@@ -164,12 +182,14 @@ files of importance since they are user across all scripts.
 <ol>
 A script that uses configuration directives must be setup as follows
 <pre>
+<p>
 	/u/admin/
 		├── bin
 		|    ├── abc.py  (Python script)
 		|    ├── adminpy (directory)
 		|          ├── abc_cfg.py (Config file)
 		|          ├── abc_schema.py (DB Schema definition file)
+</p>
 </pre>
 
 <dl>
@@ -205,14 +225,15 @@ like logging, database connectivity, ingestion CSV files into a DB etc.
 <a href="#guidelines" >Top</a>
 
 <h2><a id="logging">Logging</a></h2>
+<p>
 The ability to troubleshoot scripts based on events that occurred in a
 scripts is vital. The world is also moving to the cloud where there will be
 no-system-access to run the script manually for troubleshooting. Debugging
 from logs should be enough to troubleshoot the issue and apply the fix. There
 are <strong>five (5)</strong> logging levels and how the level should be used.
-
+</p>
 <table>
-<th>Logging levels and uses.</th>
+<caption><h4>Logging levels and uses</h4>
 
 <tr>
 <td><strong>Logging Level</strong></td>
@@ -243,18 +264,20 @@ are <strong>five (5)</strong> logging levels and how the level should be used.
 <td>CRITICAL</td>
 <td>A CRITICAL return code is a Mandatory and Immediate exit.</td>
 </tr>
-
+</caption>
 </table>
 <br>
 <a href="#guidelines" >Top</a>
 
 <h2><a id="code_compliance">Code Compliance</a></h2>
+<p>
 To ensure that scripts can be read and understood, it is important to have
 documentation & comments as well as adhere to industry-standard style guides
 within the script.
 <br>
 Additionally, code should run on all systems designed to support the
 application.
+</p>
 <ul>
 Documentation is accomplished by using the 
 <a href="https://www.python.org/dev/peps/pep-0257/" target="_blank">PEP257</a> docstring

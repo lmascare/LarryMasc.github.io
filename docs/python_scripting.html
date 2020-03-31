@@ -7,21 +7,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 </head>
 <style>
+
 	table, th, td {
             border: 1px solid black;
             border-collapse: collapse;
-            text-align: center;
+            text-align: left;
             padding: 5px;
             color: blue;
+            padding-left: 10px;
+            margin-left: 10px;
             }
-        td, caption {
-            text-align: center;
+        caption {
+				text-align:center;        
         }
+		  th {height: 60px;}
+		  tr:nth-child(even) {background-color: #f2f2f2;}
+		  
         h1, h2, h3, h4{
             color: darkblue;
+				padding-left: 10px;
         }
         p, b, ul, ol, dl, dd, dt, li {
             color: blue;
+            padding-left: 10px;
         }
         input[type=button], input[type=submit], input[type=reset] {
             color: darkblue;
@@ -122,9 +130,9 @@ this by using <em><strong>unittests</strong></em>.
 <h4>Attributes of each directory</h4>
 
 <tr>
-<td><strong>Directory</strong></td>
-<td><strong>Defined variable</strong></td>
-<td><strong>Notes</strong></td>
+<th>Directory</th>
+<th>Defined variable</th>
+<th>Notes</th>
 </tr>
 <tr>
 <td>/bb/admin</td>
@@ -236,8 +244,8 @@ are <strong>five (5)</strong> logging levels and how the level should be used.
 <caption><h4>Logging levels and uses</h4>
 
 <tr>
-<td><strong>Logging Level</strong></td>
-<td><strong>Description</strong></td>
+<th>Logging Level</th>
+<th>Description</th>
 </tr>
 
 <tr>
@@ -331,9 +339,9 @@ A. Here's the series of statements.
 A. The Database types (dbtype) are
 <table>
 <tr>
-<td><strong>Database Type</strong></td>
-<td><strong>dbtype</strong></td>
-<td><strong>Description</strong></td>
+<th>Database Type</th>
+<th>dbtype</th>
+<th>Description</th>
 </tr>
 
 <tr>

@@ -10,16 +10,26 @@
             border-collapse: collapse;
             text-align: center;
             padding: 5px;
-            color: blue;
+            color: orange;
             }
         td, caption, th {
             text-align: center;
         }
         h1, h2, h3, h4{
-            color: darkblue;
+            color: orange;
         }
         p, b, ul, ol, dl, dd, dt, li {
-            color: blue;
+            color: orange;
+        }
+        a:link {
+			color: orange;
+			text-decoration: underline;
+        }
+        a:visited {
+			color: green;
+        }
+        body {
+			background-color: black	;
         }
         input[type=button], input[type=submit], input[type=reset] {
             color: darkblue;
@@ -29,7 +39,7 @@
 </head>
 <body>
 	<h1><a id="guidelines">Guidelines while scripting Python</a></h1>
-	<ul><a href="#intro" >Introduction</a></ul>	
+	<ul><a href="#intro" >Introduction</a></ul>
 	<ul><a href="#dir_structure" >Directory Structure</a></ul>
 	<ul><a href="#config_directive" >Configuration Directives</a></ul>
 	<ul><a href="#common_python_functions">Widely used Python functions</a></ul>
@@ -45,11 +55,11 @@
 	<ul>
 		<a id href="#import_utils"> - How do I import utils into my script?</a>
 	</ul>
-	
+
 	<ul>
 		<a id href="#connect_db"> - How do I establish a connection to the Database?</a>
 	</ul>
-	
+
 	<ul>
 		<a id href="#db_types"> - What are the supported database types?</a>
 	</ul>
@@ -287,12 +297,12 @@ Additionally, code should run on all systems designed to support the
 application.
 </p>
 <ul>
-Documentation is accomplished by using the 
+Documentation is accomplished by using the
 <a href="https://www.python.org/dev/peps/pep-0257/" target="_blank">PEP257</a> docstring
 standard.
 </ul>
 <ul>
-Style observance is accomplished by using the 
+Style observance is accomplished by using the
 <a href="https://www.python.org/dev/peps/pep-0008/" target="_blank">PEP8</a> style guide.
 </ul>
 <ul>

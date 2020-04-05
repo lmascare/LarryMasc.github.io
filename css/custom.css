@@ -1,20 +1,32 @@
 table, th, td {
-   border: 1px solid black;
+   border: 2px solid slategrey;
    border-collapse: collapse;
    text-align: center;
    padding: 5px;
    color: orange;
+   padding-left: 10px;
+   margin-left: 10px;
 }
 td, caption, th {
    text-align: center;
 }
 
-h1, h2, h3, h4{
-   color: orange;
+caption {
+	text-align:center;
 }
 
-p, b, ul, ol, dl, dd, dt, li {
+th {height: 60px;}
+
+tr:nth-child(odd) {background-color: darkslategray;}
+
+h1, h2, h3, h4, h5, h6{
    color: orange;
+   <!-- padding-left: 10px; -->
+}
+
+b, dl, dd, dt, li, ol, p, pre, ul {
+   color: orange;
+   <!-- padding-left: 10px; -->
 }
 
 a:link {
@@ -22,11 +34,12 @@ a:link {
 	text-decoration: underline;
 }
 a:visited {
-	color: green;
+	color: darkorange;
 }
 
 body {
 	background-color: black	;
+	padding-left: 10px;
 }
 
 input[type=button], input[type=submit], input[type=reset] {

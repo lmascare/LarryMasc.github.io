@@ -1,0 +1,35 @@
+table, th, td {
+   border: 1px solid black;
+   border-collapse: collapse;
+   text-align: center;
+   padding: 5px;
+   color: orange;
+}
+td, caption, th {
+   text-align: center;
+}
+
+h1, h2, h3, h4{
+   color: orange;
+}
+
+p, b, ul, ol, dl, dd, dt, li {
+   color: orange;
+}
+
+a:link {
+	color: orange;
+	text-decoration: underline;
+}
+a:visited {
+	color: green;
+}
+
+body {
+	background-color: black	;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+   color: darkblue;
+   border-radius: 12px;
+}
